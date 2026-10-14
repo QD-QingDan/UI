@@ -144,7 +144,16 @@ def guess_export_and_props(source, slug):
     return name, MOCK_PROPS.get(props_key), is_default
 
 
+_build_locks = {}
+import threading as _threading
+
 def build(component_id, theme_id=None, out=None):
+    # 同组件并发构建互斥：后来者等待前者完成（避免 npm/esbuild 互相踩）
+    lock = _build_locks.setdefault(component_id, _threading.Lock())
+    with lock:
+        return _build_impl(component_id, theme_id, out)
+
+def _build_impl(component_id, theme_id=None, out=None):
     m = manifest()
     it = next((i for i in m["items"] if i["id"] == component_id and i["type"] == "component"), None)
     if not it:
@@ -413,7 +422,8 @@ def serve(port=8390):
 
     _defaults_file()
     print(f"playground on http://127.0.0.1:{port}/studio  (Studio) | /pg/<id>?theme=<t>")
-    HTTPServer(("127.0.0.1", port), H).serve_forever()
+    from http.server import ThreadingHTTPServer
+    ThreadingHTTPServer(("127.0.0.1", port), H).serve_forever()
 
 
 if __name__ == "__main__":
