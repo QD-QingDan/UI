@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>Playground Studio — 数据 × 组件 × 主题</title>
+<style>
+:root { --pg-border: hsl(214 32% 91%); --pg-muted: hsl(215 16% 47%); --pg-accent: hsl(243 75% 59%); }
+* { box-sizing: border-box; }
+body { margin:0; font: 13px/1.5 -apple-system, "Segoe UI", "PingFang SC", sans-serif; background: hsl(0 0% 98%); color: hsl(222 47% 11%); display:flex; height:100vh; overflow:hidden; }
+aside { width: 340px; min-width:340px; border-right:1px solid var(--pg-border); background:#fff; overflow-y:auto; padding:14px; }
+main { flex:1; display:flex; flex-direction:column; }
+h3 { font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--pg-muted); margin:18px 0 6px; }
+select, textarea, button { font: inherit; }
+select { width:100%; padding:6px 8px; border:1px solid var(--pg-border); border-radius:6px; background:#fff; }
+textarea { width:100%; height:200px; border:1px solid var(--pg-border); border-radius:6px; padding:8px; font-family:ui-monospace,monospace; font-size:12px; resize:vertical; }
+button { cursor:pointer; border:1px solid var(--pg-border); background:#fff; border-radius:6px; padding:5px 10px; }
+button.primary { background:var(--pg-accent); color:#fff; border-color:var(--pg-accent); }
+button.on { background:var(--pg-accent); color:#fff; border-color:var(--pg-accent); }
+.row { display:flex; gap:6px; flex-wrap:wrap; }
+.toolbar { display:flex; gap:8px; align-items:center; padding:8px 12px; border-bottom:1px solid var(--pg-border); background:#fff; flex-wrap:wrap; }
+.toolbar .status { margin-left:auto; font-size:12px; color:var(--pg-muted); }
+#frame-wrap { flex:1; display:flex; justify-content:center; padding:0; overflow:auto; background:
+  repeating-conic-gradient(hsl(0 0% 92%) 0% 25%, hsl(0 0% 96%) 0% 50%) 50%/24px 24px; }
+iframe { border:0; background:var(--background,#fff); transition:max-width .2s; width:100%; height:100%; }
+.err { color:#dc2626; font-family:ui-monospace,monospace; font-size:12px; padding:8px; }
+.chip { padding:2px 8px; border-radius:99px; font-size:11px; background:hsl(214 32% 94%); }
+.theme-swatch { display:inline-flex; gap:3px; vertical-align:-2px; margin-left:6px; }
+.theme-swatch i { width:10px; height:10px; border-radius:2px; display:inline-block; border:1px solid rgba(0,0,0,.12); }
+label.file { display:block; padding:4px 0; cursor:pointer; }
+.stat { font-size:12px; color:var(--pg-muted); margin:6px 0; }
+</style>
+</head>
+<body>
+<aside>
+  <h3>组件</h3>
+  <select id="component"><option value="">加载中…</option></select>
+  <div class="stat" id="component-meta"></div>
+
+  <h3>数据来源</h3>
+  <div class="row">
+    <button id="src-default" class="on">默认数据</button>
+    <button id="src-custom">自定义 JSON</button>
+  </div>
+  <div id="data-files" style="margin-top:8px"></div>
+  <textarea id="props" spellcheck="false" style="display:none;margin-top:8px"></textarea>
+  <div id="props-err" class="err"></div>
+  <button id="apply" class="primary" style="display:none;margin-top:6px;width:100%">应用数据 →</button>
+
+  <h3>主题</h3>
+  <select id="theme"><option value="">加载中…</option></select>
+  <div style="margin-top:8px" id="overrides"></div>
+  <div class="stat">直接改 CSS 变量，即时生效</div>
+
+  <h3>布局</h3>
+  <div class="row" id="layout">
+    <button data-w="100%">全宽</button>
+    <button data-w="1200px" class="on">桌面 1200</button>
+    <button data-w="768px">平板 768</button>
+    <button data-w="420px">手机 420</button>
+  </div>
+</aside>
+<main>
+  <div class="toolbar">
+    <b id="cur-name">—</b><span class="chip" id="cur-alias"></span>
+    <button id="reload">↻ 重建组件</button>
+    <span class="status" id="status">初始化…</span>
+  </div>
+  <div id="frame-wrap"><iframe id="frame" title="预览"></iframe></div>
+</main>
+<script>
+const $ = s => document.querySelector(s);
+const state = { comp: null, themes: [], dataFiles: [], source: 'default', customProps: null };
+
+async function api(p) { return (await fetch(p)).json(); }
+
+function setStatus(t) { $('#status').textContent = t; }
+
+function sendProps(props) {
+  $('#frame').contentWindow.postMessage({ type: 'pg-props', props }, '*');
+  setStatus('已应用数据 · ' + new Date().toLocaleTimeString());
+}
+function sendThemeCss(css) {
+  $('#frame').contentWindow.postMessage({ type: 'pg-theme', css }, '*');
+}
+
+/* ---------- 组件 ---------- */
+function currentProps() {
+  if (state.source === 'custom') { try { return JSON.parse($('#props').value); } catch (e) { return undefined; } }
+  if (state.source.startsWith('file:')) {
+    const f = state.dataFiles.find(f => 'file:' + f.file === state.source);
+    return f ? (f.data[state.comp.id] !== undefined ? f.data[state.comp.id] : f.data) : undefined;
+  }
+  return state.defaults[state.comp.id];
+}
+
+async function loadComponent(id, rebuild) {
+  state.comp = state.comps.find(c => c.id === id);
+  $('#cur-name').textContent = state.comp.name || id;
+  $('#cur-alias').textContent = state.comp.alias || id;
+  $('#component-meta').textContent = [state.comp.stack, state.comp.category].filter(Boolean).join(' · ');
+  setStatus(rebuild ? '重建中（esbuild + tailwind，约 3–5 秒）…' : '加载预览…');
+  if (state.comp.stack === 'svg-native') {
+    // SVG 等原生素材：直接渲染本体，不进 React 构建管线
+    $('#frame').src = '/raw/' + encodeURIComponent(id);
+    return;
+  }
+  $('#status').textContent = '构建中（首次约 15-60 秒）…';
+  $('#frame').src = '/pg/' + encodeURIComponent(id) + '?t=' + Date.now();
+}
+
+$('#frame').addEventListener('load', () => {
+  const props = currentProps();
+  const iv = setInterval(() => {
+    $('#frame').contentWindow.postMessage({ type: 'pg-ping' }, '*');
+  }, 150);
+  const onMsg = e => {
+    if (e.data && e.data.type === 'pg-pong') {
+      clearInterval(iv); window.removeEventListener('message', onMsg);
+      if (props !== undefined) sendProps(props);
+      const th = state.themes.find(t => t.id === $('#theme').value);
+      if (th) sendThemeCss(th.css);
+      setStatus('就绪 ✓');
+    }
+  };
+  window.addEventListener('message', onMsg);
+});
+
+/* ---------- 主题 ---------- */
+function applyOverrides() {
+  const th = state.themes.find(t => t.id === $('#theme').value);
+  if (!th) return;
+  let css = th.css;
+  document.querySelectorAll('#overrides input').forEach(inp => {
+    if (inp.value && inp.value !== inp.dataset.orig) {
+      css = css.replace(new RegExp('(--' + inp.dataset.v + ':\\s*)[^;]+;'), '$1' + inp.value + ';');
+    }
+  });
+  sendThemeCss(css);
+}
+
+function renderThemeSelect() {
+  const sel = $('#theme');
+  sel.innerHTML = state.themes.map(t => {
+    const sw = ['primary', 'background', 'accent'].map(k => t.swatch[k] ? `<i style="background:${t.swatch[k]}"></i>` : '').join('');
+    return `<option value="${t.id}">${t.name}<span class="theme-swatch">${sw}</span></option>`;
+  }).join('');
+  sel.onchange = () => { renderOverrides(); applyOverrides(); };
+  renderOverrides();
+}
+function renderOverrides() {
+  const th = state.themes.find(t => t.id === $('#theme').value);
+  const keys = ['primary', 'secondary', 'accent', 'background', 'muted', 'border', 'radius'];
+  $('#overrides').innerHTML = !th ? '' : keys.filter(k => th.swatch[k]).map(k =>
+    `<label style="display:flex;align-items:center;gap:6px;padding:2px 0">
+      <input type="color" data-v="${k}" data-orig="${th.swatch[k]}" value="${toHex(th.swatch[k])}" style="width:26px;height:20px;border:0;padding:0;background:none">
+      <span style="font-size:12px">--${k}</span>
+      <code style="font-size:10px;color:var(--pg-muted)">${th.swatch[k]}</code>
+    </label>`).join('');
+  document.querySelectorAll('#overrides input').forEach(i => i.oninput = applyOverrides);
+}
+function toHex(v) {
+  v = v.trim();
+  if (v.startsWith('#')) return v.length === 4 ? '#' + [...v.slice(1)].map(c => c + c).join('') : v;
+  const m = v.match(/(\d+)[ ,]+(\d+)[ ,]+(\d+)/);
+  if (m) return '#' + [m[1], m[2], m[3]].map(n => (+n).toString(16).padStart(2, '0')).join('');
+  if (v === 'white') return '#ffffff'; if (v === 'black') return '#000000';
+  return '#888888';
+}
+
+/* ---------- 数据来源 ---------- */
+function renderDataSources() {
+  $('#data-files').innerHTML = state.dataFiles.map(f =>
+    `<label class="file"><input type="radio" name="ds" value="file:${f.file}"> 📄 ${f.file}${f.error ? ' <span class="err">(解析失败)</span>' : ''}</label>`).join('');
+  document.querySelectorAll('input[name=ds]').forEach(r => r.onchange = () => {
+    state.source = r.value; updatePropEditor();
+  });
+}
+function updatePropEditor() {
+  const custom = state.source === 'custom';
+  $('#props').style.display = custom ? 'block' : 'none';
+  $('#apply').style.display = custom ? 'block' : 'none';
+  document.querySelector('#src-custom').classList.toggle('on', custom);
+  document.querySelector('#src-default').classList.toggle('on', state.source === 'default');
+  if (custom) {
+    $('#props').value = JSON.stringify(currentProps() || {}, null, 2);
+  } else {
+    const p = currentProps();
+    if (p !== undefined) sendProps(p);
+  }
+}
+$('#src-default').onclick = () => { state.source = 'default'; updatePropEditor(); };
+$('#src-custom').onclick = () => { state.source = 'custom'; updatePropEditor(); };
+$('#apply').onclick = () => {
+  try { const p = JSON.parse($('#props').value); $('#props-err').textContent = ''; sendProps(p); }
+  catch (e) { $('#props-err').textContent = 'JSON 解析失败: ' + e.message; }
+};
+
+/* ---------- 布局 ---------- */
+document.querySelectorAll('#layout button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('#layout button').forEach(x => x.classList.remove('on'));
+  b.classList.add('on');
+  $('#frame').style.maxWidth = b.dataset.w;
+});
+
+/* ---------- 重建 ---------- */
+$('#reload').onclick = () => state.comp && loadComponent(state.comp.id, true);
+
+/* ---------- 启动 ---------- */
+(async () => {
+  const [comps, themes, dataFiles] = await Promise.all([api('/api/components'), api('/api/themes'), api('/api/data-files')]);
+  state.comps = comps; state.themes = themes; state.dataFiles = dataFiles;
+  state.defaults = {};
+  for (const df of dataFiles) if (df.file === '__defaults__.json') state.defaults = df.data;
+  const sel = $('#component');
+  sel.innerHTML = comps.map(c => `<option value="${c.id}">${c.name || c.id}${c.category ? ' · ' + c.category : ''}</option>`).join('');
+  sel.onchange = () => loadComponent(sel.value);
+  renderThemeSelect();
+  renderDataSources();
+  if (comps.length) loadComponent(comps[0].id);
+})();
+</script>
+</body>
+</html>

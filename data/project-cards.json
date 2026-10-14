@@ -1,0 +1,89 @@
+{
+  "watermelon-pricing-1": {
+    "plans": [
+      {
+        "id": "starter",
+        "title": "入门版",
+        "description": "个人项目尝鲜",
+        "price": "0",
+        "priceSuffix": "/月",
+        "isPopular": false,
+        "features": [
+          {
+            "text": "3 个项目"
+          },
+          {
+            "text": "社区支持"
+          },
+          {
+            "text": "基础组件库"
+          }
+        ],
+        "buttonText": "免费开始"
+      },
+      {
+        "id": "pro",
+        "title": "专业版",
+        "description": "小团队效率之选",
+        "price": "99",
+        "priceSuffix": "/月",
+        "isPopular": true,
+        "features": [
+          {
+            "text": "不限项目"
+          },
+          {
+            "text": "优先支持"
+          },
+          {
+            "text": "全部高级组件"
+          },
+          {
+            "text": "主题定制"
+          }
+        ],
+        "buttonText": "立即升级"
+      },
+      {
+        "id": "team",
+        "title": "团队版",
+        "description": "更大规模协作",
+        "price": "299",
+        "priceSuffix": "/月",
+        "isPopular": false,
+        "features": [
+          {
+            "text": "SSO 登录"
+          },
+          {
+            "text": "专属客服"
+          },
+          {
+            "text": "私有部署"
+          }
+        ],
+        "buttonText": "联系销售"
+      }
+    ]
+  },
+  "watermelon-faq-6": {
+    "title": "关于这款产品",
+    "faqs": [
+      {
+        "id": "q1",
+        "question": "可以退款吗？",
+        "answer": "14 天无理由全额退款。"
+      },
+      {
+        "id": "q2",
+        "question": "支持哪些支付方式？",
+        "answer": "微信支付、支付宝与对公转账。"
+      },
+      {
+        "id": "q3",
+        "question": "数据安全吗？",
+        "answer": "全程 TLS 加密，支持私有化部署。"
+      }
+    ]
+  }
+}

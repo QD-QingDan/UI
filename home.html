@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8"><title>素材库工作台</title>
+<style>
+body{margin:0;font:15px/1.7 -apple-system,"PingFang SC",sans-serif;background:#0f172a;color:#e2e8f0;
+display:flex;align-items:center;justify-content:center;min-height:100vh}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:860px;padding:32px;width:100%}
+h1{grid-column:1/-1;font-size:22px;margin:0 0 4px}
+p.sub{grid-column:1/-1;color:#94a3b8;margin:0 0 12px;font-size:13px}
+a.card{display:block;background:#1e293b;border:1px solid #334155;border-radius:12px;padding:20px 22px;
+text-decoration:none;color:inherit;transition:.15s}
+a.card:hover{border-color:#818cf8;transform:translateY(-2px)}
+a.card b{font-size:16px;color:#a5b4fc}
+a.card small{display:block;color:#94a3b8;margin-top:6px;font-size:12.5px;line-height:1.6}
+code{background:#0f172a;padding:2px 7px;border-radius:5px;font-size:12px;color:#fbbf24}
+.foot{grid-column:1/-1;color:#64748b;font-size:12px;text-align:center;margin-top:8px}
+</style></head><body>
+<div class="grid">
+<h1>🎨 本地素材库工作台</h1>
+<p class="sub">全部服务已在本地启动，点卡片进入</p>
+<a class="card" href="/studio"><b>▶ Playground Studio</b><small>数据 → 组件 → 主题实时映射预览。选组件、换项目数据/自定义 JSON、切主题改色、切布局（手机/平板/桌面）</small></a>
+<a class="card" href="/compare"><b>⇄ 组件对比台</b><small>扫描本地项目组件（默认 ~/demo-app），匹配库内候选并排预览。接自己的项目：路径框填项目绝对路径 → 扫描</small></a>
+<a class="card" href="/pg/watermelon-pricing-1"><b>▤ 组件全景预览</b><small>直接打开单个组件全屏渲染。换地址栏 id：watermelon-pricing-1 / boardui-agent-chat / watermelon-hero-1 …</small></a>
+<a class="card" href="http://127.0.0.1:8321/search?q=pricing"><b>🔎 素材检索 API</b><small>agent/CLI 用的检索服务（需先单独启动 scripts/server.py）。文档见 ~/assets/scripts/</small></a>
+<div class="foot">服务保活：<code>bash ~/assets/scripts/up.sh</code> · 遇 not found 先跑它再刷新 · 建议本页禁用 Chrome 翻译</div>
+</div></body></html>

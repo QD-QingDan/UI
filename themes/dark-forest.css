@@ -1,0 +1,12 @@
+/* 主题：Dark Forest */
+:root {
+  --background: #0b1210; --foreground: #e7f0ea;
+  --card: #101a16; --card-foreground: #e7f0ea;
+  --primary: #34d399; --primary-foreground: #06281c;
+  --secondary: #16241e; --secondary-foreground: #c9dccf;
+  --muted: #14201a; --muted-foreground: #7d958a;
+  --accent: #123528; --accent-foreground: #6ee7b7;
+  --destructive: #f87171;
+  --border: #1e2f28; --input: #2a3d34; --ring: #34d399;
+  --radius: 10px;
+}

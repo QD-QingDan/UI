@@ -1,0 +1,12 @@
+/* 主题：Indigo Light（库内默认） */
+:root {
+  --background: #ffffff; --foreground: #0f172a;
+  --card: #ffffff; --card-foreground: #0f172a;
+  --primary: #4f46e5; --primary-foreground: #ffffff;
+  --secondary: #f1f5f9; --secondary-foreground: #0f172a;
+  --muted: #f8fafc; --muted-foreground: #64748b;
+  --accent: #eef2ff; --accent-foreground: #4f46e5;
+  --destructive: #dc2626;
+  --border: #e2e8f0; --input: #cbd5e1; --ring: #4f46e5;
+  --radius: 8px;
+}

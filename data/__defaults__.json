@@ -1,0 +1,88 @@
+{
+  "watermelon-pricing-1": {
+    "plans": [
+      {
+        "id": "free",
+        "title": "Free",
+        "description": "个人使用",
+        "price": "$0",
+        "features": [
+          {
+            "text": "1 个项目"
+          }
+        ],
+        "buttonText": "开始"
+      },
+      {
+        "id": "pro",
+        "title": "Pro",
+        "description": "团队协作",
+        "price": "$19",
+        "priceSuffix": "/月",
+        "isPopular": true,
+        "features": [
+          {
+            "text": "无限项目"
+          },
+          {
+            "text": "优先支持"
+          }
+        ],
+        "buttonText": "升级 Pro"
+      }
+    ]
+  },
+  "watermelon-pricing-2": {
+    "plans": [
+      {
+        "id": "free",
+        "title": "Free",
+        "description": "个人使用",
+        "price": "$0",
+        "features": [
+          {
+            "text": "1 个项目"
+          }
+        ],
+        "buttonText": "开始"
+      },
+      {
+        "id": "pro",
+        "title": "Pro",
+        "description": "团队协作",
+        "price": "$19",
+        "priceSuffix": "/月",
+        "isPopular": true,
+        "features": [
+          {
+            "text": "无限项目"
+          },
+          {
+            "text": "优先支持"
+          }
+        ],
+        "buttonText": "升级 Pro"
+      }
+    ]
+  },
+  "watermelon-faq-6": {
+    "title": "常见问题",
+    "faqs": [
+      {
+        "id": "q1",
+        "question": "支持哪些格式？",
+        "answer": "支持 90+ 种设计与媒体格式。"
+      },
+      {
+        "id": "q2",
+        "question": "可以商用吗？",
+        "answer": "MIT 授权，可自由商用。"
+      },
+      {
+        "id": "q3",
+        "question": "如何获取更新？",
+        "answer": "registry 拉取即最新版。"
+      }
+    ]
+  }
+}

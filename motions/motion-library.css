@@ -1,0 +1,109 @@
+/* 动效与加载 tokens 库（motion-library.css）
+ * 命名遵循 specs/naming-conventions.md：motion-* 进场动效，loading-* 加载动效。
+ * 全部纯 CSS（无 JS 依赖），进场动效配合 data-motion 守卫 + IntersectionObserver（见 motion.js）。
+ */
+
+:root {
+  --motion-duration: 600ms;
+  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-delay-step: 80ms;
+}
+
+/* ---------- 进场动效（渲染动效） ---------- */
+
+/* 前置：未激活时隐藏。JS 激活（.motion-ready → .motion-in）后才播放，防闪烁 */
+.motion-fade-up, .motion-fade-in, .motion-stagger > * {
+  opacity: 0;
+  transition: opacity var(--motion-duration) var(--motion-ease),
+              transform var(--motion-duration) var(--motion-ease);
+  transition-delay: var(--motion-delay, 0ms);
+}
+.motion-fade-up { transform: translateY(24px); }
+.motion-fade-in { transform: none; }
+.motion-stagger > * { transform: translateY(16px); }
+.motion-stagger > *:nth-child(1) { --motion-delay: calc(var(--motion-delay-step) * 0); }
+.motion-stagger > *:nth-child(2) { --motion-delay: calc(var(--motion-delay-step) * 1); }
+.motion-stagger > *:nth-child(3) { --motion-delay: calc(var(--motion-delay-step) * 2); }
+.motion-stagger > *:nth-child(4) { --motion-delay: calc(var(--motion-delay-step) * 3); }
+.motion-stagger > *:nth-child(5) { --motion-delay: calc(var(--motion-delay-step) * 4); }
+.motion-stagger > *:nth-child(6) { --motion-delay: calc(var(--motion-delay-step) * 5); }
+.motion-stagger > *:nth-child(7) { --motion-delay: calc(var(--motion-delay-step) * 6); }
+.motion-stagger > *:nth-child(8) { --motion-delay: calc(var(--motion-delay-step) * 7); }
+
+/* JS 激活后 */
+.motion-in.motion-fade-up, .motion-in.motion-fade-in { opacity: 1; transform: none; }
+.motion-in.motion-stagger > * { opacity: 1; transform: none; }
+
+/* 无 JS / 无观察器时兜底：默认可见 */
+.no-js .motion-fade-up, .no-js .motion-fade-in, .no-js .motion-stagger > * { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .motion-fade-up, .motion-fade-in, .motion-stagger > * {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+}
+
+/* ---------- 加载动效 ---------- */
+
+/* shimmer 骨架屏：流光扫过 */
+.loading-shimmer {
+  position: relative;
+  overflow: hidden;
+  background: var(--muted, #f1f5f9);
+  border-radius: var(--radius, 8px);
+}
+.loading-shimmer::after {
+  content: "";
+  position: absolute; inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent,
+              color-mix(in srgb, var(--card, #fff) 70%, transparent), transparent);
+  animation: loading-shimmer-sweep 1.6s infinite;
+}
+@keyframes loading-shimmer-sweep { 100% { transform: translateX(100%); } }
+
+/* pulse 骨架屏：呼吸 */
+.loading-pulse {
+  background: var(--muted, #f1f5f9);
+  border-radius: var(--radius, 8px);
+  animation: loading-pulse-breathe 1.8s ease-in-out infinite;
+}
+@keyframes loading-pulse-breathe { 50% { opacity: 0.45; } }
+
+/* spinner：圆环 */
+.loading-spinner {
+  width: 24px; height: 24px;
+  border: 2.5px solid var(--border, #e2e8f0);
+  border-top-color: var(--primary, #4f46e5);
+  border-radius: 50%;
+  animation: loading-spin 0.8s linear infinite;
+}
+.loading-spinner.loading-spinner-lg { width: 40px; height: 40px; border-width: 4px; }
+@keyframes loading-spin { to { transform: rotate(360deg); } }
+
+/* 进度条 */
+.loading-bar {
+  height: 4px; width: 100%;
+  overflow: hidden;
+  background: var(--muted, #f1f5f9);
+  border-radius: 999px;
+}
+.loading-bar::after {
+  content: "";
+  display: block; height: 100%; width: 40%;
+  background: var(--primary, #4f46e5);
+  border-radius: inherit;
+  animation: loading-bar-slide 1.4s var(--motion-ease) infinite;
+}
+@keyframes loading-bar-slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(350%); }
+}
+
+/* 点点点 */
+.loading-dots::after {
+  content: "···";
+  display: inline-block;
+  animation: loading-dots-step 1.2s steps(4, end) infinite;
+  clip-path: inset(0 100% 0 0);
+}
+@keyframes loading-dots-step { to { clip-path: inset(0 0 0 0); } }

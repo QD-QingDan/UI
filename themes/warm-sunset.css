@@ -1,0 +1,12 @@
+/* 主题：Warm Sunset */
+:root {
+  --background: #fffaf5; --foreground: #3b2417;
+  --card: #ffffff; --card-foreground: #3b2417;
+  --primary: #ea580c; --primary-foreground: #ffffff;
+  --secondary: #fef3e7; --secondary-foreground: #7c4a21;
+  --muted: #fdf3ea; --muted-foreground: #a0785a;
+  --accent: #ffedd5; --accent-foreground: #c2410c;
+  --destructive: #b91c1c;
+  --border: #f3e3d3; --input: #e7cdb2; --ring: #ea580c;
+  --radius: 12px;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>组件对比 — 项目 ↔ 资产库</title>
+<style>
+:root { --b: hsl(214 32% 91%); --muted: hsl(215 16% 47%); --acc: hsl(243 75% 59%); }
+* { box-sizing: border-box; }
+body { margin:0; font: 13px/1.5 -apple-system,"Segoe UI","PingFang SC",sans-serif; height:100vh; display:flex; flex-direction:column; overflow:hidden; background:hsl(0 0% 98%); }
+header { padding:10px 14px; background:#fff; border-bottom:1px solid var(--b); display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+header input { width:320px; padding:6px 10px; border:1px solid var(--b); border-radius:6px; font:inherit; }
+header button { font:inherit; padding:6px 12px; border:1px solid var(--b); border-radius:6px; background:#fff; cursor:pointer; }
+header button.primary { background:var(--acc); color:#fff; border-color:var(--acc); }
+#scan-info { color:var(--muted); font-size:12px; }
+#wrap { flex:1; display:flex; overflow:hidden; }
+/* 左：项目组件树 */
+#tree { width:300px; min-width:300px; border-right:1px solid var(--b); background:#fff; overflow-y:auto; padding:10px; }
+.item { padding:7px 10px; border-radius:6px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+.item:hover { background:hsl(214 32% 96%); }
+.item.sel { background:var(--acc); color:#fff; }
+.item.sel small { color:hsl(0 0% 100% / .7); }
+.item small { color:var(--muted); font-size:11px; }
+.item .badge { font-size:10px; padding:1px 7px; border-radius:99px; background:hsl(142 70% 90%); color:hsl(142 70% 25%); }
+.item.sel .badge { background:hsl(0 0% 100% / .25); color:#fff; }
+/* 右：对比双栏 */
+#compare { flex:1; display:flex; overflow:hidden; }
+.pane { flex:1; display:flex; flex-direction:column; border-right:1px solid var(--b); min-width:0; }
+.pane:last-child { border-right:0; }
+.pane-head { padding:8px 12px; background:#fff; border-bottom:1px solid var(--b); font-weight:600; display:flex; gap:8px; align-items:center; }
+.pane-head .chip { font-size:11px; padding:1px 8px; border-radius:99px; background:hsl(214 32% 94%); color:var(--muted); font-weight:400; }
+.pane-body { flex:1; overflow:auto; }
+iframe { border:0; width:100%; height:100%; background:#fff; }
+/* 候选列表 */
+.cand { display:flex; justify-content:space-between; align-items:center; padding:8px 12px; border-bottom:1px solid var(--b); cursor:pointer; }
+.cand:hover, .cand.on { background:hsl(243 75% 97%); }
+.cand b { font-weight:600; }
+.cand .why { color:var(--muted); font-size:11px; }
+.cand .score { color:var(--acc); font-weight:700; }
+.empty { padding:40px; text-align:center; color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <b>项目组件</b>
+  <input id="path" placeholder="项目绝对路径，如 /home/agentuser/demo-app" value="/home/agentuser/demo-app">
+  <button class="primary" id="scan">扫描</button>
+  <span id="scan-info">输入路径后点「扫描」；右侧点击候选查看预览</span>
+</header>
+<div id="wrap">
+  <div id="tree"><div class="empty">尚未扫描</div></div>
+  <div id="compare">
+    <div class="pane">
+      <div class="pane-head">库内候选 <span class="chip" id="cand-count">0</span></div>
+      <div class="pane-body" id="cands"><div class="empty">← 先选择一个项目组件</div></div>
+    </div>
+    <div class="pane">
+      <div class="pane-head">候选预览 <span class="chip" id="prev-name">—</span></div>
+      <div class="pane-body" id="preview"><div class="empty">点击左侧候选组件</div></div>
+    </div>
+  </div>
+</div>
+<script>
+const $ = s => document.querySelector(s);
+let scanned = [], sel = null;
+
+async function scan() {
+  const p = $('#path').value.trim();
+  $('#scan-info').textContent = '扫描中…';
+  const r = await fetch('/api/scan?path=' + encodeURIComponent(p));
+  const data = await r.json();
+  if (data.error) { $('#scan-info').textContent = data.error; return; }
+  scanned = data;
+  $('#scan-info').textContent = `发现 ${data.length} 个组件 · ${p}`;
+  renderTree();
+}
+function renderTree() {
+  $('#tree').innerHTML = scanned.map((s, i) => `
+    <div class="item ${sel === i ? 'sel' : ''}" data-i="${i}">
+      <div><b>${s.name}</b><br><small>${s.file}</small></div>
+      ${s.matches.length ? `<span class="badge">${s.matches.length} 候选</span>` : '<span class="badge" style="background:hsl(0 60% 92%);color:hsl(0 60% 40%)">无匹配</span>'}
+    </div>`).join('');
+  document.querySelectorAll('.item').forEach(el => el.onclick = () => {
+    sel = +el.dataset.i; renderTree(); renderCands(scanned[sel]);
+  });
+}
+function renderCands(s) {
+  $('#cand-count').textContent = s.matches.length;
+  if (!s.matches.length) { $('#cands').innerHTML = '<div class="empty">库内无匹配——可以入库这个组件</div>'; $('#preview').innerHTML = '<div class="empty">—</div>'; return; }
+  $('#cands').innerHTML = s.matches.map((m, i) => `
+    <div class="cand ${i === 0 ? 'on' : ''}" data-i="${i}">
+      <div><b>${m.alias}</b> <small style="color:var(--muted)">${m.id}</small><br><span class="why">${m.why.join(' · ')} · ${m.stack}</span></div>
+      <span class="score">${m.score}</span>
+    </div>`).join('');
+  document.querySelectorAll('.cand').forEach(el => el.onclick = () => {
+    document.querySelectorAll('.cand').forEach(x => x.classList.remove('on'));
+    el.classList.add('on');
+    preview(s.matches[+el.dataset.i]);
+  });
+  preview(s.matches[0]);
+}
+function preview(m) {
+  $('#prev-name').textContent = m.alias;
+  const src = m.stack === 'svg-native'
+    ? '/raw/' + encodeURIComponent(m.id)
+    : '/pg/' + encodeURIComponent(m.id) + '?t=' + Date.now();
+  $('#preview').innerHTML =
+    '<div id="build-hint" style="padding:24px;color:#666;font-size:13px">⏳ 首次构建该组件中（拉依赖 + esbuild，最长约 1 分钟），完成后自动显示…</div>' +
+    `<iframe src="${src}" style="opacity:0" onload="this.style.opacity=1;document.getElementById('build-hint')?.remove()"></iframe>`;
+  // iframe 加载失败（如 500）时 onload 仍触发，用 fetch 校验
+  fetch(src).then(r => { if (!r.ok) {
+    r.text().then(t => { const h = document.getElementById('build-hint');
+      if (h) h.innerHTML = '<span style="color:#dc2626">✗ 构建失败: ' + t.slice(0, 300) + '</span>'; });
+  } });
+}
+$('#scan').onclick = scan;
+$('#path').addEventListener('keydown', e => { if (e.key === 'Enter') scan(); });
+scan();
+</script>
+</body>
+</html>

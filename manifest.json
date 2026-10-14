@@ -1,0 +1,2284 @@
+{
+  "version": 1,
+  "library_root": "/home/agentuser/assets",
+  "items": [
+    {
+      "id": "comp-icon-edit",
+      "name": "编辑图标 edit.svg",
+      "type": "component",
+      "format": "svg",
+      "path": "components/icons/edit.svg",
+      "tags": [
+        "icon",
+        "edit",
+        "line"
+      ],
+      "description": "极简线条风格的编辑/铅笔图标，24x24，stroke 1.5",
+      "preview": "svg",
+      "stack": "svg-native",
+      "category": "icons",
+      "alias": "icon-edit"
+    },
+    {
+      "id": "prompt-landing-page",
+      "name": "SaaS 落地页生成提示词",
+      "type": "prompt",
+      "format": "md",
+      "path": "prompts/landing-page.md",
+      "tags": [
+        "landing-page",
+        "saas",
+        "生成模板"
+      ],
+      "description": "生成 B 端 SaaS 落地页时注入的提示词模板",
+      "inject_when": [
+        "落地页",
+        "landing page",
+        "SaaS 官网"
+      ]
+    },
+    {
+      "id": "spec-design-basics",
+      "name": "设计基础规范",
+      "type": "spec",
+      "format": "md",
+      "path": "specs/design-basics.md",
+      "tags": [
+        "design",
+        "规范",
+        "约束"
+      ],
+      "description": "配色、间距、字号、禁止事项等硬约束，生成任何前端页面前注入",
+      "inject_when": [
+        "生成页面",
+        "网页",
+        "前端",
+        "landing page",
+        "页面",
+        "落地页",
+        "主页",
+        "首页",
+        "homepage",
+        "页面设计"
+      ]
+    },
+    {
+      "id": "watermelon-pricing-1",
+      "name": "Pricing 1（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/pricing-1/pricing-1.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "pricing"
+      ],
+      "description": "Pricing sections are UI components designed to display different pricing plans and tiers for a product or service.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/pricing-1.json",
+        "dependencies": [
+          "lucide-react",
+          "react-icons"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "pricing",
+      "alias": "pricing-card"
+    },
+    {
+      "id": "watermelon-pricing-2",
+      "name": "Pricing 2（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/pricing-2/pricing-2.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "pricing"
+      ],
+      "description": "Pricing sections are UI components designed to display different pricing plans and tiers for a product or service.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/pricing-2.json",
+        "dependencies": [
+          "lucide-react",
+          "react-icons"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "pricing",
+      "alias": "pricing-card-v2"
+    },
+    {
+      "id": "watermelon-hero-1",
+      "name": "hero 1（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/hero-1/hero-1.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "hero"
+      ],
+      "description": "Widgets are modular, reusable UI components that encapsulate specific functionalities, data visualizations, or interactive elements to enhance user experience.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/hero-1.json",
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "hero",
+      "alias": "hero-section"
+    },
+    {
+      "id": "watermelon-hero-10",
+      "name": "hero 10（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/hero-10/hero-10.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "hero"
+      ],
+      "description": "A serene mountain therapy hero with editorial serif typography, compact navigation, soft glass badges, and smooth staggered viewport motion.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/hero-10.json",
+        "dependencies": [
+          "lucide-react",
+          "motion",
+          "react-icons"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "hero",
+      "alias": "hero-section-v2"
+    },
+    {
+      "id": "watermelon-footer-1",
+      "name": "Footer 1（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/footer-1/footer-1.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "footer"
+      ],
+      "description": "Footers are foundational UI components that anchor a website or application by providing consistent navigation, contact information, and legal links across every page.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/footer-1.json",
+        "dependencies": [
+          "lucide-react"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "footer",
+      "alias": "footer-block"
+    },
+    {
+      "id": "watermelon-footer-10",
+      "name": "Footer 10（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/footer-10/footer-10.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "footer"
+      ],
+      "description": "Footers are foundational UI components that anchor a website or application by providing consistent navigation, contact information, and legal links across every page.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/footer-10.json",
+        "dependencies": [
+          "react-icons"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "footer",
+      "alias": "footer-block-v2"
+    },
+    {
+      "id": "watermelon-auth-01",
+      "name": "auth 01（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/auth-01/auth-01.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "auth"
+      ],
+      "description": "Authentication flows are secure UI components designed to verify user identity and manage access to protected areas of an application without disrupting the user experience.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/auth-01.json",
+        "dependencies": [
+          "lucide-react",
+          "react-icons"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "auth",
+      "alias": "auth-form"
+    },
+    {
+      "id": "watermelon-auth-02",
+      "name": "auth 02（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/auth-02/auth-02.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "auth"
+      ],
+      "description": "Authentication flows are secure UI components designed to verify user identity and manage access to protected areas of an application without disrupting the user experience.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/auth-02.json",
+        "dependencies": [
+          "lucide-react",
+          "react-icons"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "auth",
+      "alias": "auth-form-v2"
+    },
+    {
+      "id": "watermelon-auth-03",
+      "name": "auth 03（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/auth-03/auth-03.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "auth"
+      ],
+      "description": "Authentication flows are secure UI components designed to verify user identity and manage access to protected areas of an application without disrupting the user experience.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/auth-03.json",
+        "dependencies": [
+          "lucide-react",
+          "react-icons"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "auth",
+      "alias": "auth-form-v3"
+    },
+    {
+      "id": "watermelon-contact-1",
+      "name": "contact 1（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/contact-1/contact-1.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "contact"
+      ],
+      "description": "Contact sections are communication-focused UI components designed to help users quickly reach out with questions, feedback, or support requests.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/contact-1.json",
+        "dependencies": [
+          "lucide-react",
+          "react-icons"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "contact",
+      "alias": "contact-form"
+    },
+    {
+      "id": "watermelon-contact-2",
+      "name": "contact 2（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/contact-2/contact-2.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "contact"
+      ],
+      "description": "Contact sections are communication-focused UI components designed to help users quickly reach out with questions, feedback, or support requests.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/contact-2.json",
+        "dependencies": [
+          "lucide-react",
+          "react-icons"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "contact",
+      "alias": "contact-form-v2"
+    },
+    {
+      "id": "watermelon-cta-3",
+      "name": "cta 3（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/cta-3/cta-3.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "cta"
+      ],
+      "description": "Call-to-action sections are conversion-focused UI components designed to guide users toward a specific action, such as signing up, starting a trial, or making a purchase.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/cta-3.json",
+        "dependencies": [
+          "lucide-react",
+          "react-icons"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "cta",
+      "alias": "cta-banner"
+    },
+    {
+      "id": "watermelon-cta-4",
+      "name": "cta 4（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/cta-4/cta-4.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "cta"
+      ],
+      "description": "Call-to-action sections are conversion-focused UI components designed to guide users toward a specific action, such as signing up, starting a trial, or making a purchase.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/cta-4.json",
+        "dependencies": [
+          "lucide-react",
+          "react-icons"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "cta",
+      "alias": "cta-banner-v2"
+    },
+    {
+      "id": "watermelon-bento-01",
+      "name": "Bento 1（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/bento-01/demo.tsx",
+      "extra_files": [
+        "components/watermelon/bento-01/index.tsx",
+        "components/watermelon/bento-01/security-icon.tsx"
+      ],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "bento"
+      ],
+      "description": "A bento grid layout section to showcase multiple features or items in a structured, engaging format.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/bento-01.json",
+        "dependencies": [
+          "@hugeicons/core-free-icons",
+          "@hugeicons/react",
+          "lucide-react",
+          "motion"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "bento",
+      "alias": "bento-grid"
+    },
+    {
+      "id": "watermelon-bento-02",
+      "name": "Bento 2（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/bento-02/demo.tsx",
+      "extra_files": [
+        "components/watermelon/bento-02/index.tsx",
+        "components/watermelon/bento-02/map.tsx"
+      ],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "bento"
+      ],
+      "description": "A bento grid layout section to showcase multiple features or items in a structured, engaging format.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/bento-02.json",
+        "dependencies": [
+          "motion"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "bento",
+      "alias": "bento-grid-v2"
+    },
+    {
+      "id": "watermelon-blog-1",
+      "name": "Blog 1（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/blog-1/blog-1.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "blog"
+      ],
+      "description": "Blogs are content-driven UI sections used to share insights, updates, tutorials, and stories in a structured and engaging format.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/blog-1.json",
+        "dependencies": [
+          "lucide-react"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "blog",
+      "alias": "blog-list"
+    },
+    {
+      "id": "watermelon-blog-2",
+      "name": "Blog 2（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/blog-2/blog-2.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "blog"
+      ],
+      "description": "Blogs are content-driven UI sections used to share insights, updates, tutorials, and stories in a structured and engaging format.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/blog-2.json",
+        "dependencies": [
+          "lucide-react",
+          "react-icons"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "blog",
+      "alias": "blog-list-v2"
+    },
+    {
+      "id": "watermelon-testimonials-1",
+      "name": "testimonials 1（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/testimonials-1/testimonials-1.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "testimonial"
+      ],
+      "description": "Testimonial sections are social proof UI components designed to build trust and credibility by showcasing positive feedback and experiences from real users.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/testimonials-1.json",
+        "dependencies": [
+          "lucide-react"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "testimonial",
+      "alias": "testimonials-1"
+    },
+    {
+      "id": "watermelon-testimonials-2",
+      "name": "testimonials 2（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/testimonials-2/testimonials-2.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "testimonial"
+      ],
+      "description": "Testimonial sections are social proof UI components designed to build trust and credibility by showcasing positive feedback and experiences from real users.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/testimonials-2.json",
+        "dependencies": [
+          "lucide-react"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "testimonial",
+      "alias": "testimonials-2"
+    },
+    {
+      "id": "watermelon-faq-6",
+      "name": "FAQ 6（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/faq-6/faq-06.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "faq"
+      ],
+      "description": "A modern, two-column FAQ section with a grid-like dashed border aesthetic and numbered accordion items.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/faq-6.json",
+        "dependencies": [
+          "react-icons"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "faq",
+      "alias": "faq-accordion"
+    },
+    {
+      "id": "watermelon-navigation-4",
+      "name": "Navigation-4（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/navigation-4/navigation-4.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "navigation"
+      ],
+      "description": "An advanced dashboard-ready navigation bar featuring a central search bar, action buttons, and integrated user profile management.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/navigation-4.json",
+        "dependencies": [
+          "lucide-react"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "navigation",
+      "alias": "nav-bar"
+    },
+    {
+      "id": "watermelon-cta-1",
+      "name": "cta 1（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/cta-1/cta-1.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "cta"
+      ],
+      "description": "Call-to-action sections are conversion-focused UI components designed to guide users toward a specific action, such as signing up, starting a trial, or making a purchase.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/cta-1.json",
+        "install": [
+          "lucide-react"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "cta",
+      "alias": "cta-banner-v3"
+    },
+    {
+      "id": "watermelon-cta-2",
+      "name": "cta 2（watermelon）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/cta-2/cta-2.tsx",
+      "extra_files": [],
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "block",
+        "cta"
+      ],
+      "description": "Call-to-action sections are conversion-focused UI components designed to guide users toward a specific action, such as signing up, starting a trial, or making a purchase.",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/cta-2.json",
+        "install": [
+          "lucide-react",
+          "react-icons"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "cta",
+      "alias": "cta-banner-v4"
+    },
+    {
+      "id": "boardui-agent-chat",
+      "name": "AI 聊天应用模板（boardui）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/boardui/agent-chat/agent-chat.tsx",
+      "extra_files": [
+        "components/boardui/agent-chat/agent-chat-history.tsx",
+        "components/boardui/agent-chat/agent-chat-message.tsx",
+        "components/boardui/agent-chat/agent-chat.tsx",
+        "components/boardui/agent-chat/agent-composer.tsx",
+        "components/boardui/agent-chat/demo-answers.ts",
+        "components/boardui/agent-chat/demo-transport.ts",
+        "components/boardui/agent-chat/pro-offer-card.tsx",
+        "components/boardui/agent-chat/hero-rays-config.ts",
+        "components/boardui/agent-chat/hero-rays-shader.ts",
+        "components/boardui/agent-chat/hero-rays.tsx",
+        "components/boardui/agent-chat/pro-logo-mark.tsx",
+        "components/boardui/agent-chat/tuning-types.ts",
+        "components/boardui/agent-chat/pro-prompt-card.tsx",
+        "components/boardui/agent-chat/pro-prompt-rays.ts"
+      ],
+      "tags": [
+        "react",
+        "nextjs",
+        "ai-chat",
+        "boardui",
+        "template",
+        "application",
+        "聊天",
+        "chat",
+        "chatbot",
+        "客服"
+      ],
+      "description": "带侧边栏、流式回复、思考指示器、历史记录的完整 AI 聊天界面（Next.js + Vercel AI SDK）",
+      "preview": "code",
+      "source": {
+        "registry": "https://www.boardui.com/r/agent-chat.json",
+        "install": [
+          "@ai-sdk/react@^4.0.90",
+          "@remixicon/react@^4.9.0",
+          "ai@^7.0.87",
+          "motion@^12.42.2"
+        ]
+      },
+      "stack": "react-tailwind",
+      "category": "generic",
+      "alias": "chat-app",
+      "dependencies": [
+        "@ai-sdk/react@^4.0.90",
+        "@remixicon/react@^4.9.0",
+        "ai@^7.0.87",
+        "motion@^12.42.2"
+      ]
+    },
+    {
+      "id": "font-5fe827efc4",
+      "name": "DejaVu Serif",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：DejaVu Serif",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"
+      }
+    },
+    {
+      "id": "font-6eb7f1ce7c",
+      "name": "FreeSans",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/freefont/FreeSansOblique.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：FreeSans",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/freefont/FreeSansOblique.ttf"
+      }
+    },
+    {
+      "id": "font-fe49b5a054",
+      "name": "DejaVu Sans Mono",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：DejaVu Sans Mono",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
+      }
+    },
+    {
+      "id": "font-4d5ddf4c89",
+      "name": "DejaVu Sans",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：DejaVu Sans",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+      }
+    },
+    {
+      "id": "font-4eeca3d6e4",
+      "name": "FreeSans",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/freefont/FreeSansBoldOblique.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：FreeSans",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/freefont/FreeSansBoldOblique.ttf"
+      }
+    },
+    {
+      "id": "font-c1200c7fa5",
+      "name": "FreeMono",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/freefont/FreeMonoBoldOblique.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：FreeMono",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/freefont/FreeMonoBoldOblique.ttf"
+      }
+    },
+    {
+      "id": "font-7e9a78170d",
+      "name": "Liberation Sans",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Liberation Sans",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
+      }
+    },
+    {
+      "id": "font-3eb4aad63a",
+      "name": "Liberation Mono",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/liberation/LiberationMono-BoldItalic.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Liberation Mono",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/liberation/LiberationMono-BoldItalic.ttf"
+      }
+    },
+    {
+      "id": "font-9f28786f66",
+      "name": "Liberation Serif",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/liberation/LiberationSerif-Italic.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Liberation Serif",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/liberation/LiberationSerif-Italic.ttf"
+      }
+    },
+    {
+      "id": "font-bc22179cde",
+      "name": "Liberation Mono",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/liberation/LiberationMono-Bold.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Liberation Mono",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/liberation/LiberationMono-Bold.ttf"
+      }
+    },
+    {
+      "id": "font-daa10a5859",
+      "name": "Unifont\\-JP",
+      "type": "font",
+      "format": "otf",
+      "path": "/usr/share/fonts/opentype/unifont/unifont_jp.otf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Unifont\\-JP",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/opentype/unifont/unifont_jp.otf"
+      }
+    },
+    {
+      "id": "font-0e3665300b",
+      "name": "Loma",
+      "type": "font",
+      "format": "otf",
+      "path": "/usr/share/fonts/opentype/tlwg/Loma-BoldOblique.otf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Loma",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/opentype/tlwg/Loma-BoldOblique.otf"
+      }
+    },
+    {
+      "id": "font-ca21b567bb",
+      "name": "FreeSerif",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/freefont/FreeSerif.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：FreeSerif",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/freefont/FreeSerif.ttf"
+      }
+    },
+    {
+      "id": "font-00a92773e9",
+      "name": "FreeSans",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/freefont/FreeSansBold.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：FreeSans",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/freefont/FreeSansBold.ttf"
+      }
+    },
+    {
+      "id": "font-fcfc8feb19",
+      "name": "DejaVu Sans Mono",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Oblique.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：DejaVu Sans Mono",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Oblique.ttf"
+      }
+    },
+    {
+      "id": "font-d6fa63a5f9",
+      "name": "DejaVu Sans",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：DejaVu Sans",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+      }
+    },
+    {
+      "id": "font-66c49cfe2f",
+      "name": "Liberation Serif",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Liberation Serif",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf"
+      }
+    },
+    {
+      "id": "font-17889e8534",
+      "name": "DejaVu Sans Mono",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-BoldOblique.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：DejaVu Sans Mono",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-BoldOblique.ttf"
+      }
+    },
+    {
+      "id": "font-ad374700d8",
+      "name": "Liberation Mono",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Liberation Mono",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf"
+      }
+    },
+    {
+      "id": "font-01d4d96326",
+      "name": "Liberation Sans",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/liberation/LiberationSans-Italic.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Liberation Sans",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/liberation/LiberationSans-Italic.ttf"
+      }
+    },
+    {
+      "id": "font-d7beb35a2f",
+      "name": "FreeSerif",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/freefont/FreeSerifBoldItalic.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：FreeSerif",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/freefont/FreeSerifBoldItalic.ttf"
+      }
+    },
+    {
+      "id": "font-1283e44a49",
+      "name": "Liberation Serif",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/liberation/LiberationSerif-BoldItalic.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Liberation Serif",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/liberation/LiberationSerif-BoldItalic.ttf"
+      }
+    },
+    {
+      "id": "font-d52f24a127",
+      "name": "Unifont Sample",
+      "type": "font",
+      "format": "otf",
+      "path": "/usr/share/fonts/opentype/unifont/unifont_sample.otf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Unifont Sample",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/opentype/unifont/unifont_sample.otf"
+      }
+    },
+    {
+      "id": "font-5bf5acd70e",
+      "name": "FreeMono",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/freefont/FreeMonoOblique.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：FreeMono",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/freefont/FreeMonoOblique.ttf"
+      }
+    },
+    {
+      "id": "font-5aa3ad2bf7",
+      "name": "DejaVu Sans Mono",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：DejaVu Sans Mono",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf"
+      }
+    },
+    {
+      "id": "font-6298bdcbb8",
+      "name": "IPAGothic,IPAゴシック",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/opentype/ipafont-gothic/ipag.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：IPAGothic,IPAゴシック",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/opentype/ipafont-gothic/ipag.ttf"
+      }
+    },
+    {
+      "id": "font-135f96e0e8",
+      "name": "Liberation Mono",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/liberation/LiberationMono-Italic.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Liberation Mono",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/liberation/LiberationMono-Italic.ttf"
+      }
+    },
+    {
+      "id": "font-41cbf65aa8",
+      "name": "Liberation Sans",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/liberation/LiberationSans-BoldItalic.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Liberation Sans",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/liberation/LiberationSans-BoldItalic.ttf"
+      }
+    },
+    {
+      "id": "font-f7ecad3f51",
+      "name": "Unifont CSUR",
+      "type": "font",
+      "format": "otf",
+      "path": "/usr/share/fonts/opentype/unifont/unifont_csur.otf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Unifont CSUR",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/opentype/unifont/unifont_csur.otf"
+      }
+    },
+    {
+      "id": "font-732b313a1d",
+      "name": "Unifont Upper",
+      "type": "font",
+      "format": "otf",
+      "path": "/usr/share/fonts/opentype/unifont/unifont_upper.otf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Unifont Upper",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/opentype/unifont/unifont_upper.otf"
+      }
+    },
+    {
+      "id": "font-2bfa6fbfb8",
+      "name": "Unifont Sample",
+      "type": "font",
+      "format": "otf",
+      "path": "/usr/share/fonts/opentype/unifont/unifont_upper_sample.otf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Unifont Sample",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/opentype/unifont/unifont_upper_sample.otf"
+      }
+    },
+    {
+      "id": "font-314cecc525",
+      "name": "Liberation Serif",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Liberation Serif",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf"
+      }
+    },
+    {
+      "id": "font-98aebe6037",
+      "name": "Loma",
+      "type": "font",
+      "format": "otf",
+      "path": "/usr/share/fonts/opentype/tlwg/Loma.otf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Loma",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/opentype/tlwg/Loma.otf"
+      }
+    },
+    {
+      "id": "font-8210f32369",
+      "name": "IPAGothic,IPAゴシック",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/fonts-japanese-gothic.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：IPAGothic,IPAゴシック",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/fonts-japanese-gothic.ttf"
+      }
+    },
+    {
+      "id": "font-8cc35b52da",
+      "name": "Unifont",
+      "type": "font",
+      "format": "otf",
+      "path": "/usr/share/fonts/opentype/unifont/unifont.otf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Unifont",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/opentype/unifont/unifont.otf"
+      }
+    },
+    {
+      "id": "font-f9a155849e",
+      "name": "Loma",
+      "type": "font",
+      "format": "otf",
+      "path": "/usr/share/fonts/opentype/tlwg/Loma-Bold.otf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Loma",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/opentype/tlwg/Loma-Bold.otf"
+      }
+    },
+    {
+      "id": "font-99628aa955",
+      "name": "FreeSerif",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：FreeSerif",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf"
+      }
+    },
+    {
+      "id": "font-edd2fc7c6a",
+      "name": "Loma",
+      "type": "font",
+      "format": "otf",
+      "path": "/usr/share/fonts/opentype/tlwg/Loma-Oblique.otf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Loma",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/opentype/tlwg/Loma-Oblique.otf"
+      }
+    },
+    {
+      "id": "font-6935fc3060",
+      "name": "Liberation Sans",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Liberation Sans",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"
+      }
+    },
+    {
+      "id": "font-9beb1dc408",
+      "name": "FreeMono",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/freefont/FreeMono.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：FreeMono",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/freefont/FreeMono.ttf"
+      }
+    },
+    {
+      "id": "font-85ce604d51",
+      "name": "Noto Color Emoji",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Noto Color Emoji",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf"
+      }
+    },
+    {
+      "id": "font-d00c29907a",
+      "name": "Unifont Sample",
+      "type": "font",
+      "format": "otf",
+      "path": "/usr/share/fonts/opentype/unifont/unifont_jp_sample.otf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：Unifont Sample",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/opentype/unifont/unifont_jp_sample.otf"
+      }
+    },
+    {
+      "id": "font-55e40618e6",
+      "name": "FreeSerif",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/freefont/FreeSerifItalic.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：FreeSerif",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/freefont/FreeSerifItalic.ttf"
+      }
+    },
+    {
+      "id": "font-a900d664c7",
+      "name": "FreeSans",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/freefont/FreeSans.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：FreeSans",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/freefont/FreeSans.ttf"
+      }
+    },
+    {
+      "id": "font-27f38b7cb0",
+      "name": "DejaVu Serif",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：DejaVu Serif",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"
+      }
+    },
+    {
+      "id": "font-ecb43e92e5",
+      "name": "FreeMono",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：FreeMono",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf"
+      }
+    },
+    {
+      "id": "font-5d63c219d0",
+      "name": "IPAPGothic,IPA Pゴシック,䥐䅐䝯瑨楣",
+      "type": "font",
+      "format": "ttf",
+      "path": "/usr/share/fonts/opentype/ipafont-gothic/ipagp.ttf",
+      "absolute": true,
+      "tags": [
+        "indexed",
+        "installed",
+        "font"
+      ],
+      "description": "系统已安装字体：IPAPGothic,IPA Pゴシック,䥐䅐䝯瑨楣",
+      "preview": "font",
+      "source_ref": {
+        "kind": "installed",
+        "fc_path": "/usr/share/fonts/opentype/ipafont-gothic/ipagp.ttf"
+      }
+    },
+    {
+      "id": "idx-882f337185",
+      "name": "BMAD-METHOD",
+      "type": "asset",
+      "format": "dir",
+      "path": "BMAD-METHOD",
+      "tags": [
+        "indexed",
+        "project",
+        "BMAD-METHOD"
+      ],
+      "description": "项目目录索引：2 个设计相关文件（.png）",
+      "preview": "dir",
+      "source_ref": {
+        "kind": "project",
+        "root": "/home/agentuser/BMAD-METHOD",
+        "files": [
+          "Wordmark.png",
+          "banner-bmad-method.png"
+        ]
+      }
+    },
+    {
+      "id": "idx-98884c0f54",
+      "name": "BMAD-METHOD · skills/bmad-prd/assets",
+      "type": "asset",
+      "format": "dir",
+      "path": "BMAD-METHOD/skills/bmad-prd/assets",
+      "tags": [
+        "indexed",
+        "project",
+        "BMAD-METHOD"
+      ],
+      "description": "项目目录索引：1 个设计相关文件（.html）",
+      "preview": "dir",
+      "source_ref": {
+        "kind": "project",
+        "root": "/home/agentuser/BMAD-METHOD",
+        "files": [
+          "validation-report-template.html"
+        ]
+      }
+    },
+    {
+      "id": "idx-430621c4c2",
+      "name": "BMAD-METHOD · skills/bmad-brainstorming/assets",
+      "type": "asset",
+      "format": "dir",
+      "path": "BMAD-METHOD/skills/bmad-brainstorming/assets",
+      "tags": [
+        "indexed",
+        "project",
+        "BMAD-METHOD"
+      ],
+      "description": "项目目录索引：1 个设计相关文件（.html）",
+      "preview": "dir",
+      "source_ref": {
+        "kind": "project",
+        "root": "/home/agentuser/BMAD-METHOD",
+        "files": [
+          "brain-selector.html"
+        ]
+      }
+    },
+    {
+      "id": "idx-a74b2b6930",
+      "name": "BMAD-METHOD · skills/bmad-ux/assets",
+      "type": "asset",
+      "format": "dir",
+      "path": "BMAD-METHOD/skills/bmad-ux/assets",
+      "tags": [
+        "indexed",
+        "project",
+        "BMAD-METHOD"
+      ],
+      "description": "项目目录索引：1 个设计相关文件（.html）",
+      "preview": "dir",
+      "source_ref": {
+        "kind": "project",
+        "root": "/home/agentuser/BMAD-METHOD",
+        "files": [
+          "validation-report-template.html"
+        ]
+      }
+    },
+    {
+      "id": "idx-691631dcf1",
+      "name": "BMAD-METHOD · docs/images",
+      "type": "asset",
+      "format": "dir",
+      "path": "BMAD-METHOD/docs/images",
+      "tags": [
+        "indexed",
+        "project",
+        "BMAD-METHOD"
+      ],
+      "description": "项目目录索引：1 个设计相关文件（.svg）",
+      "preview": "dir",
+      "source_ref": {
+        "kind": "project",
+        "root": "/home/agentuser/BMAD-METHOD",
+        "files": [
+          "bmad-delivery-loop.svg"
+        ]
+      }
+    },
+    {
+      "id": "idx-59db5a9948",
+      "name": "BMAD-METHOD · docs-site/src/diagrams",
+      "type": "asset",
+      "format": "dir",
+      "path": "BMAD-METHOD/docs-site/src/diagrams",
+      "tags": [
+        "indexed",
+        "project",
+        "BMAD-METHOD"
+      ],
+      "description": "项目目录索引：5 个设计相关文件（.svg）",
+      "preview": "dir",
+      "source_ref": {
+        "kind": "project",
+        "root": "/home/agentuser/BMAD-METHOD",
+        "files": [
+          "bmad-delivery-loop.svg",
+          "build-run.svg",
+          "development-paths.svg",
+          "planning-skills.svg",
+          "walkthrough-run.svg"
+        ]
+      }
+    },
+    {
+      "id": "idx-25f320bf68",
+      "name": "BMAD-METHOD · docs-site/src/styles",
+      "type": "asset",
+      "format": "dir",
+      "path": "BMAD-METHOD/docs-site/src/styles",
+      "tags": [
+        "indexed",
+        "project",
+        "BMAD-METHOD"
+      ],
+      "description": "项目目录索引：1 个设计相关文件（.css）",
+      "preview": "dir",
+      "source_ref": {
+        "kind": "project",
+        "root": "/home/agentuser/BMAD-METHOD",
+        "files": [
+          "custom.css"
+        ]
+      }
+    },
+    {
+      "id": "idx-704fc68e19",
+      "name": "BMAD-METHOD · docs-site/public",
+      "type": "asset",
+      "format": "dir",
+      "path": "BMAD-METHOD/docs-site/public",
+      "tags": [
+        "indexed",
+        "project",
+        "BMAD-METHOD"
+      ],
+      "description": "项目目录索引：3 个设计相关文件（.ico, .png, .svg）",
+      "preview": "dir",
+      "source_ref": {
+        "kind": "project",
+        "root": "/home/agentuser/BMAD-METHOD",
+        "files": [
+          "apple-touch-icon.png",
+          "favicon.ico",
+          "favicon.svg"
+        ]
+      }
+    },
+    {
+      "id": "idx-4926ac7c42",
+      "name": "BMAD-METHOD · docs-site/public/img",
+      "type": "asset",
+      "format": "dir",
+      "path": "BMAD-METHOD/docs-site/public/img",
+      "tags": [
+        "indexed",
+        "project",
+        "BMAD-METHOD"
+      ],
+      "description": "项目目录索引：2 个设计相关文件（.png）",
+      "preview": "dir",
+      "source_ref": {
+        "kind": "project",
+        "root": "/home/agentuser/BMAD-METHOD",
+        "files": [
+          "bmad-dark.png",
+          "bmad-light.png"
+        ]
+      }
+    },
+    {
+      "id": "theme-indigo-light",
+      "name": "Indigo Light（默认）",
+      "type": "theme",
+      "format": "css",
+      "path": "themes/indigo-light.css",
+      "tags": [
+        "theme",
+        "light",
+        "indigo",
+        "shadcn"
+      ],
+      "description": "干净的靛蓝浅色主题，shadcn/Tailwind 变量兼容",
+      "inject_when": [
+        "主题",
+        "theme",
+        "换肤",
+        "配色",
+        "主题切换"
+      ],
+      "source_ref": {
+        "kind": "library"
+      }
+    },
+    {
+      "id": "theme-dark-forest",
+      "name": "Dark Forest",
+      "type": "theme",
+      "format": "css",
+      "path": "themes/dark-forest.css",
+      "tags": [
+        "theme",
+        "dark",
+        "green"
+      ],
+      "description": "深林绿暗色主题，护眼低对比",
+      "inject_when": [
+        "主题",
+        "theme",
+        "换肤",
+        "配色",
+        "主题切换"
+      ],
+      "source_ref": {
+        "kind": "library"
+      }
+    },
+    {
+      "id": "theme-warm-sunset",
+      "name": "Warm Sunset",
+      "type": "theme",
+      "format": "css",
+      "path": "themes/warm-sunset.css",
+      "tags": [
+        "theme",
+        "light",
+        "warm",
+        "orange"
+      ],
+      "description": "暖橙落日主题，适合消费类产品",
+      "inject_when": [
+        "主题",
+        "theme",
+        "换肤",
+        "配色",
+        "主题切换"
+      ],
+      "source_ref": {
+        "kind": "library"
+      }
+    },
+    {
+      "id": "theme-test-violet",
+      "name": "Test Violet",
+      "type": "theme",
+      "format": "css",
+      "path": "themes/theme-test-violet.css",
+      "tags": [
+        "theme",
+        "custom"
+      ],
+      "description": "自定义主题：Test Violet",
+      "inject_when": [
+        "主题",
+        "theme",
+        "换肤",
+        "配色"
+      ],
+      "source_ref": {
+        "kind": "library"
+      }
+    },
+    {
+      "id": "spec-naming-conventions",
+      "name": "组件命名规范",
+      "type": "spec",
+      "format": "md",
+      "path": "specs/naming-conventions.md",
+      "tags": [
+        "naming",
+        "命名",
+        "规范",
+        "alias",
+        "约束"
+      ],
+      "description": "从库引用组件时的命名硬约束：alias 结构、React/文件/CSS 类/动效变量命名规则",
+      "inject_when": [
+        "组件",
+        "命名",
+        "页面",
+        "落地页",
+        "前端",
+        "生成"
+      ],
+      "alias": "naming-conventions"
+    },
+    {
+      "id": "motion-library-css",
+      "name": "动效与加载 tokens 库",
+      "type": "motion",
+      "format": "css",
+      "path": "motions/motion-library.css",
+      "tags": [
+        "motion",
+        "动效",
+        "loading",
+        "进场",
+        "骨架屏",
+        "shimmer"
+      ],
+      "alias": "motion-library",
+      "description": "纯 CSS 动效 tokens：motion-fade-up/fade-in/stagger 进场，loading-shimmer/pulse/spinner/bar/dots 加载",
+      "inject_when": [
+        "动效",
+        "动画",
+        "加载",
+        "骨架屏",
+        "进场",
+        "页面"
+      ]
+    },
+    {
+      "id": "motion-runtime-js",
+      "name": "进场动效激活器",
+      "type": "motion",
+      "format": "js",
+      "path": "motions/motion-runtime.js",
+      "tags": [
+        "motion",
+        "动效",
+        "IntersectionObserver",
+        "runtime"
+      ],
+      "alias": "motion-runtime",
+      "description": "IntersectionObserver 激活 .motion-* 类，进视口播放进场动效；含无 JS 与 reduced-motion 兜底",
+      "inject_when": [
+        "动效",
+        "进场",
+        "滚动",
+        "页面"
+      ]
+    },
+    {
+      "id": "watermelon-copy-confirm",
+      "name": "copy-confirm（watermelon 动效）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/copy-confirm/copy-confirm.tsx",
+      "extra_files": [],
+      "stack": "react-tailwind",
+      "category": "generic",
+      "alias": "motion-copy-confirm",
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "animated",
+        "motion",
+        "copy-confirm"
+      ],
+      "description": "动效/微交互组件：copy-confirm（framer-motion/motion 驱动）",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/copy-confirm.json",
+        "dependencies": [
+          "framer-motion",
+          "lucide-react"
+        ]
+      }
+    },
+    {
+      "id": "watermelon-fluid-tabs",
+      "name": "fluid-tabs（watermelon 动效）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/fluid-tabs/fluid-tabs.tsx",
+      "extra_files": [],
+      "stack": "react-tailwind",
+      "category": "generic",
+      "alias": "motion-fluid-tabs",
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "animated",
+        "motion",
+        "fluid-tabs"
+      ],
+      "description": "动效/微交互组件：fluid-tabs（framer-motion/motion 驱动）",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/fluid-tabs.json",
+        "dependencies": [
+          "motion",
+          "react-icons"
+        ]
+      }
+    },
+    {
+      "id": "watermelon-command-search",
+      "name": "command-search（watermelon 动效）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/command-search/command-search.tsx",
+      "extra_files": [],
+      "stack": "react-tailwind",
+      "category": "generic",
+      "alias": "motion-command-search",
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "animated",
+        "motion",
+        "command-search"
+      ],
+      "description": "动效/微交互组件：command-search（framer-motion/motion 驱动）",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/command-search.json",
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ]
+      }
+    },
+    {
+      "id": "watermelon-floating-input",
+      "name": "floating-input（watermelon 动效）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/floating-input/floating-input.tsx",
+      "extra_files": [],
+      "stack": "react-tailwind",
+      "category": "generic",
+      "alias": "motion-floating-input",
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "animated",
+        "motion",
+        "floating-input"
+      ],
+      "description": "动效/微交互组件：floating-input（framer-motion/motion 驱动）",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/floating-input.json",
+        "dependencies": []
+      }
+    },
+    {
+      "id": "watermelon-continuous-tabs",
+      "name": "continuous-tabs（watermelon 动效）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/continuous-tabs/continuous-tabs.tsx",
+      "extra_files": [],
+      "stack": "react-tailwind",
+      "category": "generic",
+      "alias": "motion-continuous-tabs",
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "animated",
+        "motion",
+        "continuous-tabs"
+      ],
+      "description": "动效/微交互组件：continuous-tabs（framer-motion/motion 驱动）",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/continuous-tabs.json",
+        "dependencies": [
+          "motion"
+        ]
+      }
+    },
+    {
+      "id": "watermelon-budget-card",
+      "name": "budget-card（watermelon 动效）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/budget-card/budget-card.tsx",
+      "extra_files": [],
+      "stack": "react-tailwind",
+      "category": "generic",
+      "alias": "motion-budget-card",
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "animated",
+        "motion",
+        "budget-card"
+      ],
+      "description": "动效/微交互组件：budget-card（framer-motion/motion 驱动）",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/budget-card.json",
+        "dependencies": [
+          "lucide-react",
+          "motion"
+        ]
+      }
+    },
+    {
+      "id": "watermelon-card-swipe",
+      "name": "card-swipe（watermelon 动效）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/card-swipe/card-swipe.tsx",
+      "extra_files": [],
+      "stack": "react-tailwind",
+      "category": "generic",
+      "alias": "motion-card-swipe",
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "animated",
+        "motion",
+        "card-swipe"
+      ],
+      "description": "动效/微交互组件：card-swipe（framer-motion/motion 驱动）",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/card-swipe.json",
+        "dependencies": [
+          "@hugeicons/core-free-icons",
+          "@hugeicons/react",
+          "motion",
+          "next-themes"
+        ]
+      }
+    },
+    {
+      "id": "watermelon-adaptive-slider",
+      "name": "adaptive-slider（watermelon 动效）",
+      "type": "component",
+      "format": "tsx",
+      "path": "components/watermelon/adaptive-slider/adaptive-slider.tsx",
+      "extra_files": [],
+      "stack": "react-tailwind",
+      "category": "generic",
+      "alias": "motion-adaptive-slider",
+      "tags": [
+        "react",
+        "tailwind",
+        "watermelon-ui",
+        "animated",
+        "motion",
+        "adaptive-slider"
+      ],
+      "description": "动效/微交互组件：adaptive-slider（framer-motion/motion 驱动）",
+      "preview": "code",
+      "source": {
+        "registry": "https://registry.watermelon.sh/r/adaptive-slider.json",
+        "dependencies": [
+          "motion"
+        ]
+      }
+    }
+  ],
+  "sources": {
+    "installed": {
+      "enabled": true
+    },
+    "collected": {
+      "enabled": true,
+      "dirs": [
+        "/home/agentuser/Downloads",
+        "/home/agentuser/Documents",
+        "/home/agentuser/Pictures"
+      ]
+    },
+    "project": {
+      "enabled": true,
+      "discover_from_home": true,
+      "dirs": []
+    }
+  },
+  "taxonomy": {
+    "stacks": {
+      "react-tailwind": {
+        "label": "React + Tailwind（标准）",
+        "standard": true
+      },
+      "svg-native": {
+        "label": "SVG 原生（框架无关）",
+        "standard": true
+      },
+      "vue-tailwind": {
+        "label": "Vue + Tailwind（非标，可入库不推荐采集）",
+        "standard": false
+      },
+      "svelte": {
+        "label": "Svelte（非标）",
+        "standard": false
+      },
+      "html-css": {
+        "label": "纯 HTML/CSS",
+        "standard": true
+      },
+      "other": {
+        "label": "未分类",
+        "standard": false
+      }
+    },
+    "categories": [
+      "hero",
+      "pricing",
+      "cta",
+      "features",
+      "bento",
+      "blog",
+      "testimonial",
+      "faq",
+      "footer",
+      "auth",
+      "contact",
+      "navigation",
+      "announcement",
+      "error",
+      "card",
+      "tabs",
+      "dialog",
+      "input",
+      "button",
+      "icons",
+      "generic"
+    ]
+  }
+}
